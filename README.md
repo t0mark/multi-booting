@@ -7,8 +7,10 @@ Ubuntu &amp; Windows
 
 ## 사용법
 - 동기화.bat 실행 파일을 관리자 권한으로 실행
+  
   ![image](./docs/사용법.png)
 
 ## 실행 결과
 - log가 이상해도, 반영됨
+  
   ![image](./docs/실행_결과.png)
