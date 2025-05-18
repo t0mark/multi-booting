@@ -10,4 +10,5 @@ Ubuntu &amp; Windows
   ![image](./docs/사용법.png)
 
 ## 실행 결과
+- log가 이상해도, 반영됨
   ![image](./docs/실행_결과.png)
