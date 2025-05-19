@@ -68,7 +68,3 @@ sudo dpkg -i ~/Downloads/chrome-remote-desktop_current_amd64.deb
 
 ### 활성화
 - 원격 데스크톱 앱 $\to$ 다음 $\to$ 승인 $\to$ 명령어 터미널에 복사 $\to$ 비밀번호 설정
-<p style="display: flex; justify-content: space-around; align-items: center;">
-  <img src="docs/활성화_명령어.png" alt="명령어" style="max-width: 45%; height: auto;" />
-  <img src="docs/활성화_터미널.png" alt="터미널" style="max-width: 45%; height: auto;" />
-</p>
