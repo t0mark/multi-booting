@@ -107,13 +107,13 @@ FIRST_X_DISPLAY_NUMBER = 0 # echo $DISPLAY 출력 결과
     display = self.get_unused_display_number()
     self.child_env["DISPLAY"] = ":%d" % display
     # self._launch_server(server_args)
-    if not self._launch_pre_session():
+    # if not self._launch_pre_session():
       # If there was no pre-session script, launch the session immediately.
-      self.launch_desktop_session()
-    self.server_inhibitor.record_started(MINIMUM_PROCESS_LIFETIME,
-                                      backoff_time)
-    self.session_inhibitor.record_started(MINIMUM_PROCESS_LIFETIME,
-                                     backoff_time)
+      # self.launch_desktop_session()
+    # self.server_inhibitor.record_started(MINIMUM_PROCESS_LIFETIME,
+    #                                   backoff_time)
+    # self.session_inhibitor.record_started(MINIMUM_PROCESS_LIFETIME,
+    #                                  backoff_time)
 
 
 # 수정 전 (line 1424 ~ 1430)
