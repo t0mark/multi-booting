@@ -54,3 +54,17 @@ sudo apt install python3-rosdep
 sudo rosdep init
 rosdep update
 ```
+
+## Chrome 원격 데스크톱
+- 확장 프로그램 $\to$ Chrome remote Desktop
+
+### App 설치
+- SSH를 통해 설정 $\to$ 다음 $\to$ Debian Linux 링크 클릭
+``` bash
+sudo apt update
+sudo apt --fix-broken install
+sudo dpkg -i ~/Downloads/chrome-remote-desktop_current_amd64.deb
+```
+
+### 활성화
+- 원격 데스크톱 앱 $\to$ 다음 $\to$ 승인 $\to$ 명령어 터미널에 복사 $\to$ 비밀번호 설정
