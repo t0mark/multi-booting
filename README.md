@@ -136,3 +136,20 @@ FIRST_X_DISPLAY_NUMBER = 0 # echo $DISPLAY 출력 결과
 
 ### 활성화
 - 원격 데스크톱 앱 $\to$ 다음 $\to$ 승인 $\to$ 명령어 터미널에 복사 $\to$ 비밀번호 설정
+
+---
+
+# 무선랜 A3000 mini 드라이버 설치
+- 우분투 20.04, 커널 5.15.0-139-generic 기준
+```bash
+# 커널 버전 확인
+uname -a
+
+git clone https://github.com/RinCat/RTL88x2BU-Linux-Driver
+cd RTL88x2BU-Linux-Driver
+make clean
+make
+sudo make install
+
+# insatll 후 재부팅
+```
