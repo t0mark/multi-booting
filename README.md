@@ -13,6 +13,12 @@ ibus-setup
 # 이모지 삭제
 ```
 
+## Chrome 설치
+```bash
+wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+sudo apt install ./google-chrome-stable_current_amd64.deb
+```
+
 ## 우분투 $\to$ 윈도우
 - 재시작 시, grub 부트로더가 우분투를 기본으로 select
 - select index를 임의의로 설정하는 실행파일 작성
@@ -49,6 +55,12 @@ sudo apt install software-properties-common apt-transport-https wget
 wget -q https://packages.microsoft.com/keys/microsoft.asc -O- | sudo apt-key add -
 sudo add-apt-repository "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main"
 sudo apt install code
+
+sudo apt update
+sudo apt install npm
+
+npm install -g @anthropic-ai/claude-code
+npm install -g @google/gemini-cli
 ```
 
 ## ROS 설치
