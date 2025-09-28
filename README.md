@@ -1,6 +1,13 @@
 # multi-booting
 Ubuntu &amp; Windows
 
+## 한글 설치
+```bash
+sudo apt update
+sudo apt install ibus-hangul
+```
+
+
 ## 우분투 $\to$ 윈도우
 - 재시작 시, grub 부트로더가 우분투를 기본으로 select
 - select index를 임의의로 설정하는 실행파일 작성
@@ -8,10 +15,10 @@ Ubuntu &amp; Windows
 ## 사용법
 ``` bash
 # 실행 권한 부여, 한 번만 설정
-sudo chmod +x Windows.sh
+sudo chmod +x windows.sh
 
 # 재시작
-sudo ./Windows.sh
+sudo ./windows.sh
 ```
 ---
 ## NVIDIA Driver + CUDA 설치
@@ -147,7 +154,16 @@ uname -a
 
 git clone https://github.com/RinCat/RTL88x2BU-Linux-Driver
 cd RTL88x2BU-Linux-Driver
-make clean
+
+sudo apt update
+sudo apt install git
+
+sudo apt update
+sudo apt install make
+
+sudo apt update
+sudo apt install build-essential
+
 make
 sudo make install
 
