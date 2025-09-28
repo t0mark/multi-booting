@@ -37,7 +37,7 @@ sudo ./windows.sh
 ``` bash
 # NVIDIA Driver
 sudo apt update
-sudo apt install nvidia-driver-460
+sudo apt install nvidia-utils-470
 
 # CUDA
 wget https://developer.download.nvidia.com/compute/cuda/11.2.0/local_installers/cuda_11.2.0_460.27.04_linux.run
