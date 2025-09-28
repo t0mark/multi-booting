@@ -1,63 +1,21 @@
 # multi-booting
 Ubuntu &amp; Windows
 
-## 무선랜 A3000 mini 드라이버 설치
-- 우분투 20.04, 커널 5.15.0-139-generic 기준
-```bash
-# 커널 버전 확인
-uname -a
-
-git clone https://github.com/RinCat/RTL88x2BU-Linux-Driver
-cd RTL88x2BU-Linux-Driver
-
-sudo apt update
-sudo apt install git
-
-sudo apt update
-sudo apt install make
-
-sudo apt update
-sudo apt install build-essential
-
-make
-sudo make install
-
-# insatll 후 재부팅
-```
-
-## 한글 설치
+## 기타
 ```bash
 sudo apt update
-sudo apt install ibus-hangul
-```
+sudo apt upgrade -y
 
-```bash
-ibus-setup
-
-# 이모지 삭제
-```
-
-## Chrome 설치
-```bash
+# Chrome
+sudo apt install -y wget
 wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
-sudo apt install ./google-chrome-stable_current_amd64.deb
-```
+sudo apt install -y ./google-chrome-stable_current_amd64.deb
 
-## 우분투 $\to$ 윈도우
-- 재시작 시, grub 부트로더가 우분투를 기본으로 select
-- select index를 임의의로 설정하는 실행파일 작성
-
-## 사용법
-``` bash
+# 우분투 -> 윈도우
 # 실행 권한 부여, 한 번만 설정
 sudo chmod +x windows.sh
-
-# 재시작
 sudo ./windows.sh
-```
 
-## 개발 tool 설치
-``` bash
 # Terminator
 sudo apt-get update
 sudo apt-get install terminator -y
@@ -69,34 +27,16 @@ wget -q https://packages.microsoft.com/keys/microsoft.asc -O- | sudo apt-key add
 sudo add-apt-repository "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main"
 sudo apt install code
 
-# cli 도구
-curl -fsSL https://deb.nodesource.com/setup_18.x | sudo -E bash -
-sudo apt-get install -y nodejs
-
-sudo apt update
-sudo apt install npm
-sudo npm install -g @anthropic-ai/claude-code
-
+# gemini-cli
 curl -fsSL https://deb.nodesource.com/setup_20.x | sudo -E bash -
 sudo apt-get install -y nodejs
 sudo npm install -g @google/gemini-cli
+
+# claude code
+sudo npm install -g @anthropic-ai/claude-code
 ```
 
-## ROS 설치
-``` bash
-sudo sh -c 'echo "deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main" > /etc/apt/sources.list.d/ros-latest.list'
-sudo apt install curl # if you haven't already installed curl
-curl -s https://raw.githubusercontent.com/ros/rosdistro/master/ros.asc | sudo apt-key add -
-sudo apt update
-sudo apt install ros-noetic-desktop-full
-
-echo "source /opt/ros/noetic/setup.bash" >> ~/.bashrc
-source ~/.bashrc
-sudo apt install python3-rosdep python3-rosinstall python3-rosinstall-generator python3-wstool build-essential
-sudo rosdep init
-rosdep update
-```
-
+---
 ## Chrome 원격 데스크톱
 - 확장 프로그램 $\to$ Chrome remote Desktop
 
@@ -178,34 +118,54 @@ FIRST_X_DISPLAY_NUMBER = 0 # echo $DISPLAY 출력 결과
 
 ### 활성화
 - 원격 데스크톱 앱 $\to$ 다음 $\to$ 승인 $\to$ 명령어 터미널에 복사 $\to$ 비밀번호 설정
-
 ---
-# Ubuntu 22.04
+# Ubuntu 20.04
+
+## 무선랜 A3000 mini 드라이버 설치
+- 우분투 20.04, 커널 5.15.0-139-generic 기준
+```bash
+# 커널 버전 확인
+uname -a
+
+git clone https://github.com/RinCat/RTL88x2BU-Linux-Driver
+cd RTL88x2BU-Linux-Driver
+
+sudo apt update
+sudo apt install git
+
+sudo apt update
+sudo apt install make
+
+sudo apt update
+sudo apt install build-essential
+
+make
+sudo make install
+
+# insatll 후 재부팅
+```
+
+## 한글 설치
 ```bash
 sudo apt update
-sudo apt upgrade -y
+sudo apt install ibus-hangul
 
-# Chrome
-sudo apt install -y wget
-wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
-sudo apt install -y ./google-chrome-stable_current_amd64.deb
+ibus-setup
 
-# Terminator
-sudo apt-get update
-sudo apt-get install terminator -y
+# 이모지 삭제
+```
 
-# VScode
+## ROS 설치
+``` bash
+sudo sh -c 'echo "deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main" > /etc/apt/sources.list.d/ros-latest.list'
+sudo apt install curl # if you haven't already installed curl
+curl -s https://raw.githubusercontent.com/ros/rosdistro/master/ros.asc | sudo apt-key add -
 sudo apt update
-sudo apt install software-properties-common apt-transport-https wget
-wget -q https://packages.microsoft.com/keys/microsoft.asc -O- | sudo apt-key add -
-sudo add-apt-repository "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main"
-sudo apt install code
+sudo apt install ros-noetic-desktop-full
 
-# gemini-cli
-curl -fsSL https://deb.nodesource.com/setup_20.x | sudo -E bash -
-sudo apt-get install -y nodejs
-sudo npm install -g @google/gemini-cli
-
-# claude code
-sudo npm install -g @anthropic-ai/claude-code
+echo "source /opt/ros/noetic/setup.bash" >> ~/.bashrc
+source ~/.bashrc
+sudo apt install python3-rosdep python3-rosinstall python3-rosinstall-generator python3-wstool build-essential
+sudo rosdep init
+rosdep update
 ```
