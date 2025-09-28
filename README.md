@@ -1,6 +1,30 @@
 # multi-booting
 Ubuntu &amp; Windows
 
+## 무선랜 A3000 mini 드라이버 설치
+- 우분투 20.04, 커널 5.15.0-139-generic 기준
+```bash
+# 커널 버전 확인
+uname -a
+
+git clone https://github.com/RinCat/RTL88x2BU-Linux-Driver
+cd RTL88x2BU-Linux-Driver
+
+sudo apt update
+sudo apt install git
+
+sudo apt update
+sudo apt install make
+
+sudo apt update
+sudo apt install build-essential
+
+make
+sudo make install
+
+# insatll 후 재부팅
+```
+
 ## 한글 설치
 ```bash
 sudo apt update
@@ -31,18 +55,7 @@ sudo chmod +x windows.sh
 # 재시작
 sudo ./windows.sh
 ```
----
-## NVIDIA Driver + CUDA 설치
-- GPU: RTX 3050
-``` bash
-# NVIDIA Driver
-sudo apt update
-sudo apt install nvidia-utils-470
 
-# CUDA
-wget https://developer.download.nvidia.com/compute/cuda/11.2.0/local_installers/cuda_11.2.0_460.27.04_linux.run
-sudo sh cuda_11.2.0_460.27.04_linux.run
-```
 ## 개발 tool 설치
 ``` bash
 # Terminator
@@ -167,27 +180,32 @@ FIRST_X_DISPLAY_NUMBER = 0 # echo $DISPLAY 출력 결과
 - 원격 데스크톱 앱 $\to$ 다음 $\to$ 승인 $\to$ 명령어 터미널에 복사 $\to$ 비밀번호 설정
 
 ---
-
-# 무선랜 A3000 mini 드라이버 설치
-- 우분투 20.04, 커널 5.15.0-139-generic 기준
+# Ubuntu 22.04
 ```bash
-# 커널 버전 확인
-uname -a
-
-git clone https://github.com/RinCat/RTL88x2BU-Linux-Driver
-cd RTL88x2BU-Linux-Driver
-
 sudo apt update
-sudo apt install git
+sudo apt upgrade -y
 
+# Chrome
+sudo apt install -y wget
+wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+sudo apt install -y ./google-chrome-stable_current_amd64.deb
+
+# Terminator
+sudo apt-get update
+sudo apt-get install terminator -y
+
+# VScode
 sudo apt update
-sudo apt install make
+sudo apt install software-properties-common apt-transport-https wget
+wget -q https://packages.microsoft.com/keys/microsoft.asc -O- | sudo apt-key add -
+sudo add-apt-repository "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main"
+sudo apt install code
 
-sudo apt update
-sudo apt install build-essential
+# gemini-cli
+curl -fsSL https://deb.nodesource.com/setup_20.x | sudo -E bash -
+sudo apt-get install -y nodejs
+sudo npm install -g @google/gemini-cli
 
-make
-sudo make install
-
-# insatll 후 재부팅
+# claude code
+sudo npm install -g @anthropic-ai/claude-code
 ```
