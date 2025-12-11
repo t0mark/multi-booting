@@ -37,6 +37,35 @@ sudo npm install -g @anthropic-ai/claude-code
 # codex
 sudo npm install -g @openai/codex
 ```
+### Docker
+``` bash
+# Docker 설치
+sudo apt update
+sudo apt install ca-certificates curl gnupg lsb-release
+
+# 키를 저장할 디렉토리 생성
+sudo mkdir -p /etc/apt/keyrings
+
+# GPG 키 다운로드 및 저장
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
+
+# 키 파일 권한 설정 (모든 사용자가 읽을 수 있도록)
+sudo chmod a+r /etc/apt/keyrings/docker.gpg
+
+echo \
+  "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu \
+  $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+  
+sudo apt update
+sudo apt install docker-ce docker-ce-cli containerd.io docker-compose-plugin
+
+# 현재 사용자를 docker 그룹에 추가
+sudo usermod -aG docker $USER
+
+# 변경 사항을 즉시 적용 (로그아웃 후 다시 로그인하는 효과)
+newgrp docker
+
+```
 ---
 
 ## 컨테이너 설치
