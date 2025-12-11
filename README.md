@@ -84,5 +84,9 @@ sudo systemctl restart docker
 ## 컨테이너 설치
 ``` bash
 apt update && apt upgrade -y
-apt install curl wget gedit sudo
+apt install curl wget gedit sudo git
+
+apt-get update
+apt-get install -y nvidia-cuda-toolkit
+nvcc --version
 ```
