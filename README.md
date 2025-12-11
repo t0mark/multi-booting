@@ -65,6 +65,19 @@ sudo usermod -aG docker $USER
 # 변경 사항을 즉시 적용 (로그아웃 후 다시 로그인하는 효과)
 newgrp docker
 
+curl -fsSL https://nvidia.github.io/libnvidia-container/gpgkey | sudo gpg --dearmor -o /usr/share/keyrings/nvidia-container-toolkit-keyring.gpg
+
+curl -s -L https://nvidia.github.io/libnvidia-container/stable/deb/nvidia-container-toolkit.list | \
+  sed 's#deb https://#deb [signed-by=/usr/share/keyrings/nvidia-container-toolkit-keyring.gpg] https://#g' | \
+  sudo tee /etc/apt/sources.list.d/nvidia-container-toolkit.list
+
+sudo apt-get update && sudo apt-get install -y nvidia-container-toolkit
+
+# Docker에 Nvidia 런타임 설정
+sudo nvidia-ctk runtime configure --runtime=docker
+# Docker 재시작
+sudo systemctl restart docker
+
 ```
 ---
 
