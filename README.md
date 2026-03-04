@@ -4,11 +4,12 @@ Ubuntu &amp; Windows
 ## 호스트 설치
 ```bash
 sudo apt update && sudo apt upgrade -y
+sudo apt-get update
 
 # Chrome
 sudo apt install -y wget
 wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
-sudo apt install -y ./google-chrome-stable_current_amd64.deb
+sudo dpkg -i ./google-chrome-stable_current_amd64.deb
 
 # 우분투 -> 윈도우
 # 실행 권한 부여, 한 번만 설정
@@ -16,8 +17,7 @@ sudo chmod +x windows.sh
 sudo ./windows.sh
 
 # Terminator
-sudo apt-get update
-sudo apt-get install terminator -y
+sudo apt install terminator -y
 
 # VScode
 sudo apt update
