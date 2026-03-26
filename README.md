@@ -90,3 +90,13 @@ apt-get update
 apt-get install -y nvidia-cuda-toolkit
 nvcc --version
 ```
+
+## ~/.bashrc 설정
+``` bash
+gedit ~/.bashrc
+
+# docker compose 실행 함수
+compose() {
+  docker compose -f ~/docker/"$1".yml run realsense bash
+}
+```
