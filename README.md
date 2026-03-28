@@ -97,6 +97,11 @@ gedit ~/.bashrc
 
 # docker compose 실행 함수
 compose() {
-  docker compose -f ~/docker/"$1".yml run realsense bash
+  docker compose -f ~/docker/"$1".yml up -d "$1"
+}
+
+# docker 접속 함수
+exec() {
+  docker exec -it "$1" bash
 }
 ```
