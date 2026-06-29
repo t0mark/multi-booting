@@ -109,3 +109,25 @@ start() {
   docker start "$1"
 }
 ```
+
+## VS Code ssh 설정
+```
+Host 창조2관_NPU_서버
+  HostName 172.25.185.15
+  User jairlab
+  Port 22015
+
+Host 창조2관_GPU_서버
+  HostName 113.198.65.72
+  User ubuntu
+  Port 31022
+
+Host 201호_서버
+  HostName 172.22.81.200
+  User airlab
+
+Host 집
+  HostName 59.1.173.175
+  User tomark
+
+```
