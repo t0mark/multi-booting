@@ -131,3 +131,12 @@ Host 집
   User tomark
 
 ```
+
+```
+
+alias vnc='vncviewer localhost:59000'
+alias chang='ssh -L 59000:localhost:5901 -C -N -l ubuntu 113.198.65.72'
+alias npu='ssh -p 22015 -L 59000:localhost:5901 -C -N -l jairlab 113.198.65.72'
+alias 201='ssh -L 59000:localhost:5901 -C -N -l airlab 172.22.81.200'
+alias go2='ssh -L 59000:localhost:5901 -C -N -l unitree 192.168.0.6'
+```
