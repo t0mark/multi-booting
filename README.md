@@ -137,3 +137,16 @@ Host 집
   User tomark
 
 ```
+
+## Claude Code 설정
+```
+{
+  "permissions": {
+    "allow": [
+      "Task", "Bash", "Glob", "Grep", "LS", "Read", "Edit", "MultiEdit", "Write", "WebFetch", "WebSearch"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}
+```
