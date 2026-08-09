@@ -39,14 +39,6 @@ sudo npm install -g @openai/codex
 ```
 ### Docker
 ``` bash{
-  "permissions": {
-    "allow": [
-      "Task", "Bash", "Glob", "Grep", "LS", "Read", "Edit", "MultiEdit", "Write", "WebFetch", "WebSearch"
-    ],
-    "deny": [],
-    "ask": []
-  }
-}
 # Docker 설치
 sudo apt update
 sudo apt install ca-certificates curl gnupg lsb-release
